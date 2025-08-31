@@ -1,43 +1,12 @@
 import { IconType } from 'react-icons';
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
-export interface Skill {
-    name: string;
-    description: string;
-    icon: IconType;
-}
-
-export interface CardCompIntf {
-    id: string;
-    title: string;
-    description: string;
-    tags: string[];
-    link: string;
-    image: string[];
-    github?: string;
-}
-
 export interface SocialLink {
     name: string;
     url: string;
     icon: IconType;
 }
 
-export interface TeamMemberCarouselCompIntf {
-    id: string;
-    name: string;
-    role: string;
-    company: string;
-    image: string;
-    testimonial: string;
-    social: {
-        linkedin: string;
-        twitter: string;
-        github: string;
-    };
-}
-
-// personel
 export interface ProjectData {
     name: string;
     title: string;
@@ -45,51 +14,72 @@ export interface ProjectData {
     email: string;
     profileImage: string;
     about: string[];
-    resumeUrl: string;
-}
-
-// socialData
-export interface SocialData {
-    name: string;
-    url: string;
-    icon: IconType;
+    fileUrl: string;
+    author: string;
 }
 
 export interface SiteData {
     project: ProjectData;
-    personal: ProjectData;
-    socialLinks: SocialData[];
+    socialLinks: SocialLink[];
+}
+
+export interface Viewport {
+    width: string;
+    initialScale: number;
+    maximumScale: number;
+    viewportFit?: 'auto' | 'contain' | 'cover';
+}
+
+export interface ImageMetadata {
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+    type?: string;
+}
+
+export interface VideoMetadata {
+    url: string;
+    width: number;
+    height: number;
+    type: string;
+    thumbnailUrl?: string;
+    duration?: number;
+}
+
+export interface ArticleMetadata {
+    publishedTime?: string;
+    modifiedTime?: string;
+    authors?: string[];
+    section?: string;
+    tags?: string[];
+    expirationTime?: string;
+}
+
+export interface AppleWebAppMetadata {
+    title?: string;
+    statusBarStyle?: 'default' | 'black' | 'black-translucent';
+    capable?: boolean;
+    startupImage?: string | ImageMetadata[];
 }
 
 // Create the site data with proper typing
 const siteData: SiteData = {
     project: {
-        name: 'W.K.D.Kavishka',
-        title: 'Software Engineer | DevOps Engineer',
+        name: 'IRS Calculator',
+        title: 'Inner Restlessnes Scaling Score Calculator | IRS Calculator',
         location: 'Colombo, Sri Lanka',
         email: 'w.k.d.kavishka@gmail.com',
         profileImage: '/images/profile.webp',
         about: [
-            'Take your business to the next level',
-            'Taking on challenging projects and delivering exceptional software solutions.',
-            'Focused on delivering high-quality, scalable applications that meet business needs.',
-            'Building lasting client relationships through exceptional service and innovative solutions.',
-            'Dedicated to excellence in every project and committed to client satisfaction.',
+            'A web application that calculates the Inner Restlessness Scaling Score (IRSS). The IRSS is a measure of inner restlessness, which is a psychological state where one feels restless and agitated.',
+            '',
+            'The application allows users to input their responses to various questions and calculates the score based on their responses. The score is then mapped to a verbal description of their inner restlessness.',
+            '',
+            'The application is built using Next.js, Tailwind CSS, and TypeScript. It also utilizes the emailjs library for sending user feedback.',
         ],
-        resumeUrl: '/resume.pdf',
-    },
-    personal: {
-        name: 'W.K.D.Kavishka',
-        title: 'Software Engineer | DevOps Engineer',
-        location: 'Colombo, Sri Lanka',
-        email: 'w.k.d.kavishka@gmail.com',
-        profileImage: '/images/profile.webp',
-        about: [
-            'Experienced Software Engineer with a passion for creating efficient and scalable applications.',
-            'Skilled in full-stack development and cloud infrastructure.',
-            'Committed to continuous learning and staying up-to-date with the latest technologies.'
-        ],
-        resumeUrl: '/resume.pdf',
+        fileUrl: '/resume.pdf',
+        author: 'W.K.D.Kavishka',
     },
 
     socialLinks: [
