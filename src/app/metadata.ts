@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 
 // Site Configuration
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://irs-calculator.vercel.app';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wkdkavishka.github.io/IRS-Calculate_Inner_restlessnes_score';
 const siteName = 'IRS Calculator';
-const description = 'Calculate your Inner Restlessness Scaling Score (IRSS) with our easy-to-use calculator. Understand and measure your inner restlessness level.';
+const description =
+    'Calculate your Inner Restlessness Scaling Score (IRSS) with our easy-to-use calculator. Understand and measure your inner restlessness level.';
 
 // Viewport Configuration
 export const viewport: Viewport = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     },
     description,
     metadataBase: new URL(baseUrl),
-    
+
     // SEO & Indexing
     keywords: [
         'IRS Calculator',
@@ -49,23 +50,23 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    
+
     // Application
     applicationName: siteName,
     generator: 'Next.js',
     referrer: 'strict-origin-when-cross-origin',
     category: 'Health & Wellness',
-    
+
     // Authorship
     authors: [
-        { 
+        {
             name: 'W.K.D.Kavishka',
-            url: 'https://github.com/wkdkavishka' 
-        }
+            url: 'https://github.com/wkdkavishka',
+        },
     ],
     creator: 'W.K.D.Kavishka',
     publisher: 'W.K.D.Kavishka',
-    
+
     // Icons & PWA
     icons: {
         icon: [
@@ -73,9 +74,7 @@ export const metadata: Metadata = {
             { url: '/images/meta/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
             { url: '/images/meta/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
         ],
-        apple: [
-            { url: '/images/meta/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-        ],
+        apple: [{ url: '/images/meta/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
         other: [
             {
                 rel: 'mask-icon',
@@ -84,7 +83,7 @@ export const metadata: Metadata = {
             },
         ],
     },
-    
+
     // Format Detection
     formatDetection: {
         email: true,
@@ -93,7 +92,7 @@ export const metadata: Metadata = {
         date: true,
         url: true,
     },
-    
+
     // PWA
     manifest: '/site.webmanifest',
     appleWebApp: {
@@ -101,7 +100,7 @@ export const metadata: Metadata = {
         statusBarStyle: 'default',
         capable: true,
     },
-    
+
     // OpenGraph
     openGraph: {
         type: 'website',
@@ -120,7 +119,7 @@ export const metadata: Metadata = {
             },
         ],
     },
-    
+
     // Twitter
     twitter: {
         card: 'summary_large_image',
@@ -137,7 +136,7 @@ export const metadata: Metadata = {
         creator: '@wkdkavishka',
         site: '@wkdkavishka',
     },
-    
+
     // Additional
     alternates: {
         canonical: baseUrl,
@@ -145,7 +144,7 @@ export const metadata: Metadata = {
             'en-US': baseUrl,
         },
     },
-    
+
     // Verification (replace with your actual verification codes)
     verification: {
         google: 'YOUR_GOOGLE_VERIFICATION_CODE',
@@ -155,7 +154,7 @@ export const metadata: Metadata = {
             me: ['mailto:contact@example.com', 'https://twitter.com/wkdkavishka'],
         },
     },
-    
+
     // Other
     other: {
         'msapplication-TileColor': '#4a90e2',

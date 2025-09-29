@@ -3,7 +3,6 @@ import { NotificationProvider } from '../contexts/NotificationContext';
 import './globals.css';
 import { metadata } from './metadata';
 import ThreeBackground from '../components/ThreeBackground';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NavigationComp as Navigation } from '../components/NavigationComp';
 
 export { metadata };
@@ -30,7 +29,6 @@ export default function RootLayout({
                         </div>
                     </div>
                 </NotificationProvider>
-                <SpeedInsights />
             </body>
         </html>
     );
