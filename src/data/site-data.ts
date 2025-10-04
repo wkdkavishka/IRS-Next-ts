@@ -10,12 +10,12 @@ export interface SocialLink {
 export interface ProjectData {
     name: string;
     title: string;
-    location: string;
     email: string;
     profileImage: string;
     about: string[];
-    fileUrl: string;
     author: string;
+    authorUrl: string;
+    siteUrl: string;
 }
 
 export interface SiteData {
@@ -23,52 +23,11 @@ export interface SiteData {
     socialLinks: SocialLink[];
 }
 
-export interface Viewport {
-    width: string;
-    initialScale: number;
-    maximumScale: number;
-    viewportFit?: 'auto' | 'contain' | 'cover';
-}
-
-export interface ImageMetadata {
-    url: string;
-    width: number;
-    height: number;
-    alt: string;
-    type?: string;
-}
-
-export interface VideoMetadata {
-    url: string;
-    width: number;
-    height: number;
-    type: string;
-    thumbnailUrl?: string;
-    duration?: number;
-}
-
-export interface ArticleMetadata {
-    publishedTime?: string;
-    modifiedTime?: string;
-    authors?: string[];
-    section?: string;
-    tags?: string[];
-    expirationTime?: string;
-}
-
-export interface AppleWebAppMetadata {
-    title?: string;
-    statusBarStyle?: 'default' | 'black' | 'black-translucent';
-    capable?: boolean;
-    startupImage?: string | ImageMetadata[];
-}
-
 // Create the site data with proper typing
 const siteData: SiteData = {
     project: {
         name: 'IRS Calculator',
         title: 'Inner Restlessnes Scaling Score Calculator | IRS Calculator',
-        location: 'Colombo, Sri Lanka',
         email: 'w.k.d.kavishka@gmail.com',
         profileImage: '/images/profile.webp',
         about: [
@@ -78,8 +37,9 @@ const siteData: SiteData = {
             '',
             'The application is built using Next.js, Tailwind CSS, and TypeScript. It also utilizes the emailjs library for sending user feedback.',
         ],
-        fileUrl: '/resume.pdf',
         author: 'W.K.D.Kavishka',
+        authorUrl: 'https://wkdkavishka.github.io',
+        siteUrl: 'https://wkdkavishka.github.io/IRS-Calculate_Inner_restlessnes_score',
     },
 
     socialLinks: [

@@ -21,9 +21,8 @@ import { generateMetaImages } from './genMetaImages.ts';
 async function deploy() {
     try {
         // Target directory where the built files will be deployed
-        // This should point to your GitHub Pages repository
-        const TARGET_DIR =
-            '/mnt/Storage/Projects/IRS calculator/IRS-Calculate_Inner_restlessnes_score/';
+        // Using relative path from the project root
+        const TARGET_DIR = join('..', 'IRS-Calculate_Inner_restlessnes_score');
         const SRC_DIR = join(process.cwd(), 'dist');
 
         // Step 1: Generate meta images (favicons, social media images, etc.)
@@ -39,18 +38,16 @@ async function deploy() {
         console.log('[deploy] Building project...');
         runCommand('npm run build');
 
-        // Step 3: Verify the target directory exists
-        console.log('[deploy] Checking if target directory exists...');
+        // Step 3: Create target directory if it doesn't exist
+        console.log('[deploy] Ensuring target directory exists...');
         if (!existsSync(TARGET_DIR)) {
-            console.error(
-                `[deploy][ERROR] Target directory '${TARGET_DIR}' does not exist. Deployment aborted.`
-            );
-            process.exit(1);
+            console.log(`[deploy] Creating target directory: ${TARGET_DIR}`);
+            runCommand(`mkdir -p "${TARGET_DIR}"`);
         }
 
         // Step 4: Copy built files to the GitHub Pages repository
         console.log('[deploy] Copying files to GitHub Pages repo...');
-        runCommand(`cp -r ${SRC_DIR}/* ${TARGET_DIR}`);
+        runCommand(`cp -r "${SRC_DIR}/." "${TARGET_DIR}/"`);
 
         // Step 5: Stage all changes in the target repository
         console.log('[deploy] Adding changes to git...');

@@ -1,5 +1,7 @@
 'use client';
 
+import siteData from '@/data/site-data';
+import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 
 type Question = {
@@ -174,7 +176,7 @@ export default function Page() {
     return (
         <section id="IRS" className="flex min-h-screen items-center justify-center px-6 py-20">
             <div className="md:mx-2xl lg:mx-3xl max-w-3xl overflow-hidden rounded-2xl border-2 border-gray-200 bg-white/40 shadow-xl backdrop-blur-lg">
-                <header className="mb-8 border-b border-gray-200 pb-6 text-center">
+                <header className="mb-1 border-b border-gray-200 pb-1 text-center">
                     <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl">
                         <span className="block text-blue-600">Internal Restlessness</span>
                         <span className="block text-blue-600">Scale (IRS) Assessment</span>
@@ -190,16 +192,34 @@ export default function Page() {
                             Dr. Lisa Weyandt and Colleagues
                         </a>
                     </p>
+                    {/* Social Links for me */}
+                    <div className="my-4 flex justify-center space-x-4">
+                        <p className="text-gray-600">Contact me:</p>
+                        {siteData.socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-700 transition-colors hover:text-blue-600"
+                                aria-label={social.name}
+                            >
+                                {React.createElement(social.icon, {
+                                    size: 24,
+                                })}
+                            </a>
+                        ))}
+                    </div>
                 </header>
 
-                <div className="mb-6 border-l-4 border-red-400 bg-red-50 p-4">
+                <div className="mb-3 border-l-4 border-red-400 bg-red-50 p-3">
                     <p className="text-sm text-red-700">
                         <strong>Note:</strong> I am not a doctor or mental health professional. I
                         just recreated the original questions and made a web application for it.
                     </p>
                 </div>
 
-                <div className="mb-6 border-l-4 border-yellow-400 bg-yellow-50 p-4">
+                <div className="mb-3 border-l-4 border-yellow-400 bg-yellow-50 p-3">
                     <p className="text-sm text-yellow-700">
                         <strong>Disclaimer:</strong> Be aware these are not the original questions.
                         This assessment is for educational and research purposes only. It is not a

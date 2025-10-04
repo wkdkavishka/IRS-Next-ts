@@ -4,11 +4,12 @@
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build && next-sitemap",
+        "build": "next build",
+        "bns": "npm run build && npx serve dist",
         "start": "next start",
         "deploy": "ts-node scripts/deploy.ts",
         "lint": "next lint",
-        "format": "prettier --write \"**/*.+(js|jsx|json|md|yml|yaml|css|less|scss|ts|tsx|graphql|mdx|vue|svelte)\""
+        "format": "prettier --write \"{src,scripts}/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx,html}\""
     },
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
@@ -22,6 +23,7 @@
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-icons": "^5.5.0",
+        "serve": "^14.2.5",
         "three": "^0.180.0"
     },
     "devDependencies": {
@@ -32,7 +34,6 @@
         "autoprefixer": "^10.4.21",
         "eslint": "^9",
         "eslint-config-next": "15.5.4",
-        "next-sitemap": "^4.2.3",
         "postcss": "^8.5.6",
         "prettier": "^3.6.2",
         "prettier-plugin-tailwindcss": "^0.6.14",

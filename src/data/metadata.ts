@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next';
+import siteData from './site-data';
 
 // Site Configuration
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wkdkavishka.github.io/IRS-Calculate_Inner_restlessnes_score';
-const siteName = 'IRS Calculator';
+const baseUrl = siteData.project.siteUrl;
+const siteName = siteData.project.name;
 const description =
     'Calculate your Inner Restlessness Scaling Score (IRSS) with our easy-to-use calculator. Understand and measure your inner restlessness level.';
 
@@ -38,6 +39,9 @@ export const metadata: Metadata = {
         'Restlessness Test',
         'Mental Health Calculator',
         'Anxiety Assessment',
+        'wkdkavishka',
+        'W.K.D.Kavishka',
+        'Dumindu Kavishka',
     ],
     robots: {
         index: true,
