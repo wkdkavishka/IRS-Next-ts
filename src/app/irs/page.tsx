@@ -540,7 +540,16 @@ export default function Page() {
                         Performance of College Students With and Without ADHD&quot; (2003).
                     </p>
                     <p className="mt-2">
-                        {new Date().getFullYear()} WKDKavishka. All rights reserved.
+                        {new Date().getFullYear()}{' '}
+                        <a
+                            href={siteData.project.authorUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                        >
+                            WKDKavishka
+                        </a>
+                        . All rights reserved.
                     </p>
                 </footer>
             </div>
