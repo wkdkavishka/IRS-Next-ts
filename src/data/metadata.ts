@@ -151,9 +151,7 @@ export const metadata: Metadata = {
 
     // Verification (replace with your actual verification codes)
     verification: {
-        google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-        yandex: 'YOUR_YANDEX_VERIFICATION_CODE',
-        yahoo: 'YOUR_YAHOO_VERIFICATION_CODE',
+        google: process.env.GOOGLE as string,
         other: {
             me: ['mailto:contact@example.com', 'https://twitter.com/wkdkavishka'],
         },

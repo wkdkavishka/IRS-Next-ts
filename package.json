@@ -2,11 +2,13 @@
     "name": "wkdkavishka-irs-calculator",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",
         "bns": "npm run build && npx serve dist",
-        "start": "next start",
+        "//start": "next start",
+        "start": "npx serve dist",
         "deploy": "ts-node scripts/deploy.ts",
         "lint": "next lint",
         "format": "prettier --write \"{src,scripts}/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx,html}\""
